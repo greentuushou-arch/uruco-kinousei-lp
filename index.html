@@ -11,29 +11,30 @@
 <style>
 /* =========================================================
    URUCO LP  —  base tokens
-   配色: アイボリー → ダスティローズ / シャンパンゴールドはアクセント
+   配色: ベース=ピンク（淡ピンク〜マゼンタ）＋ 赤紫（マンゴスチン果皮）を暗色アンカーに
    書体: Shippori Mincho(見出し・数字) / Zen Kaku Gothic New(本文) / Josefin Sans(欧字)
-   ※ ラグジュアリー美容 × 科学的信頼感。医療・薬機を想起させる表現はしない。
+   ※ ラグジュアリー美容 × 科学的信頼感。医療・薬機を想起させる表現はしない。ピンク過多を避け、
+      面積の大半はほぼ白に近いピンク、彩度の高いピンクはCTAと小アクセントのみ。
    ========================================================= */
 :root{
-  --ivory:#FBF7F2;
-  --ivory-deep:#F4EBE0;
-  --paper:#FFFDFA;
-  --rose:#E6C9C4;
-  --rose-mid:#D6A9A2;
-  --rose-deep:#A97169;
-  --rose-ink:#8C574F;
-  --plum:#4B2A43;
-  --plum-soft:#6E4460;
-  --ink:#3A2F2B;
-  --ink-soft:#6E605A;
-  --ink-faint:#9A8B83;
-  --gold:#B9924E;
-  --gold-deep:#9C7738;
-  --gold-pale:#E8D8B8;
-  --line:rgba(58,47,43,.16);
-  --line-soft:rgba(58,47,43,.09);
-  --shadow:0 30px 60px -34px rgba(75,42,67,.35);
+  --ivory:#FBE9F1;         /* ベース: 淡いピンク（旧アイボリー） */
+  --ivory-deep:#F4D5E5;    /* 少し濃いピンクの面 */
+  --paper:#FFF6FA;         /* ほぼ白に近いピンク */
+  --rose:#EFB7D2;
+  --rose-mid:#E08BB6;
+  --rose-deep:#BC4485;     /* CTA: 深いピンク〜マゼンタ */
+  --rose-ink:#A93A7C;      /* 明るい面のピンク文字アクセント */
+  --plum:#480E33;          /* 赤紫（マンゴスチン果皮）深色 */
+  --plum-soft:#7C2A5E;
+  --ink:#360C29;           /* 最暗の赤紫 — 本文＋暗色セクション地 */
+  --ink-soft:#6C4560;
+  --ink-faint:#A47C9A;
+  --gold:#9A3670;          /* アクセント: 深いベリー赤紫（罫・スモールキャップ） */
+  --gold-deep:#7C2857;
+  --gold-pale:#ECB8D7;     /* 暗色セクション上のライトベリー */
+  --line:rgba(54,12,41,.18);
+  --line-soft:rgba(54,12,41,.10);
+  --shadow:0 30px 60px -34px rgba(72,14,51,.42);
   --wrap:min(88vw, 960px);
   --wrap-narrow:min(88vw, 660px);
   --sec-pad:clamp(4.75rem, 14vw, 9.5rem);
@@ -64,7 +65,7 @@ a{color:inherit}
 section{padding-block:var(--sec-pad)}
 .bg-paper{background:var(--paper)}
 .bg-deep{background:var(--ivory-deep)}
-.bg-rose{background:linear-gradient(180deg,var(--ivory) 0%,#F2DEDA 55%,#EAD0CB 100%)}
+.bg-rose{background:linear-gradient(180deg,var(--ivory) 0%,#F3CDE3 55%,#EAB6D6 100%)}
 
 /* ---------- eyebrow / section head ---------- */
 .eyebrow{
@@ -117,7 +118,7 @@ h2.title .plum{color:var(--plum-soft)}
    ========================================================= */
 .brandbar{
   position:sticky;top:0;z-index:40;
-  background:rgba(251,247,242,.86);
+  background:rgba(255,246,250,.86);
   backdrop-filter:saturate(1.4) blur(10px);
   border-bottom:1px solid var(--line-soft);
 }
@@ -144,8 +145,8 @@ h2.title .plum{color:var(--plum-soft)}
 .fv{
   position:relative;
   background:
-    radial-gradient(120% 90% at 88% 8%, #F0DAD5 0%, rgba(240,218,213,0) 58%),
-    linear-gradient(178deg,var(--ivory) 0%,var(--paper) 40%,#F5E6E1 100%);
+    radial-gradient(120% 90% at 88% 8%, #F2C6DF 0%, rgba(242,198,223,0) 60%),
+    linear-gradient(178deg,var(--paper) 0%,var(--ivory) 42%,#F2CBE1 100%);
   padding-block:clamp(3rem,10vw,5.5rem) 0;
   overflow:hidden;
 }
@@ -187,7 +188,7 @@ h2.title .plum{color:var(--plum-soft)}
   margin-top:2.1rem;
   padding:1.3rem 1.4rem;
   border-left:2px solid var(--gold);
-  background:rgba(255,253,250,.6);
+  background:rgba(255,246,250,.6);
   font-size:clamp(.82rem,3.1vw,.92rem);
   line-height:1.9;
   color:var(--ink-soft);
@@ -200,7 +201,7 @@ h2.title .plum{color:var(--plum-soft)}
   display:flex;flex-direction:column;justify-content:flex-end;
   gap:.5rem;
   padding:1.15rem;
-  background:linear-gradient(150deg,#F7ECE3 0%,#EAD2CC 52%,#E2C3BC 100%);
+  background:linear-gradient(150deg,#FBE4EF 0%,#EEC4DC 52%,#E2A9CD 100%);
   border:1px solid var(--line-soft);
   color:var(--ink-soft);
   overflow:hidden;
@@ -235,7 +236,7 @@ h2.title .plum{color:var(--plum-soft)}
 }
 .point{
   padding-block:1.5rem;
-  border-bottom:1px solid rgba(251,247,242,.16);
+  border-bottom:1px solid rgba(255,240,248,.16);
   display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:baseline;
 }
 .point:last-child{border-bottom:0}
@@ -403,7 +404,7 @@ h2.title .plum{color:var(--plum-soft)}
 /* =========================================================
    SECTION 07 — 1 + 5 BEAUTY FORMULA
    ========================================================= */
-.formula{background:linear-gradient(180deg,var(--ivory) 0%,#F1DED9 100%)}
+.formula{background:linear-gradient(180deg,var(--ivory) 0%,#F0CDE1 100%)}
 .formula__eq{
   width:var(--wrap);margin-inline:auto;
   display:flex;align-items:center;justify-content:center;gap:clamp(.6rem,4vw,1.6rem);
@@ -460,17 +461,17 @@ h2.title .plum{color:var(--plum-soft)}
 .reveal-spec h2.title .accent{color:var(--rose-mid)}
 .spec-sub{
   width:var(--wrap);margin-inline:auto;margin-top:1.6rem;
-  color:rgba(251,247,242,.72);font-size:clamp(1rem,3.9vw,1.12rem);
+  color:rgba(255,240,248,.72);font-size:clamp(1rem,3.9vw,1.12rem);
 }
 .spec{
   width:var(--wrap);margin-inline:auto;
   margin-top:clamp(2.6rem,8vw,3.6rem);
-  border-top:1px solid rgba(251,247,242,.22);
+  border-top:1px solid rgba(255,240,248,.22);
 }
 .spec__row{
   display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
   padding-block:1.15rem;
-  border-bottom:1px solid rgba(251,247,242,.16);
+  border-bottom:1px solid rgba(255,240,248,.16);
 }
 .spec__row .name{font-size:clamp(.98rem,3.8vw,1.1rem)}
 .spec__row .val{
@@ -481,12 +482,12 @@ h2.title .plum{color:var(--plum-soft)}
 .spec__row .val small{font-size:.5em;color:var(--gold-pale);margin-left:.15em}
 .spec__note{
   width:var(--wrap);margin-inline:auto;margin-top:1.2rem;
-  font-size:.8rem;color:rgba(251,247,242,.5);
+  font-size:.8rem;color:rgba(255,240,248,.5);
 }
 .spec__hero{
   width:var(--wrap);margin-inline:auto;
   margin-top:clamp(2.8rem,9vw,4rem);
-  border:1px solid var(--gold);
+  border:1px solid var(--gold-pale);
   padding:clamp(1.8rem,7vw,2.8rem);
   text-align:center;
 }
@@ -499,7 +500,7 @@ h2.title .plum{color:var(--plum-soft)}
   font-size:clamp(2.2rem,10.5vw,4.6rem);line-height:1.15;margin-top:.4rem;
 }
 .spec__hero .big span{color:var(--rose-mid);font-size:.5em}
-.spec__hero .fn{font-size:.78rem;color:rgba(251,247,242,.5);margin-top:.6rem}
+.spec__hero .fn{font-size:.78rem;color:rgba(255,240,248,.5);margin-top:.6rem}
 
 /* =========================================================
    SECTION 11 — 4 beauty materials
@@ -518,7 +519,7 @@ h2.title .plum{color:var(--plum-soft)}
   font-family:"Josefin Sans",sans-serif;
   font-size:clamp(1.5rem,6vw,2.1rem);
   letter-spacing:.08em;
-  color:var(--rose-mid);
+  color:var(--rose-ink);
 }
 .material__ja{
   font-family:"Shippori Mincho",serif;
@@ -529,7 +530,7 @@ h2.title .plum{color:var(--plum-soft)}
 /* =========================================================
    SECTION 12 — differentiation
    ========================================================= */
-.diff{background:linear-gradient(180deg,#F1DED9 0%,var(--ivory) 100%)}
+.diff{background:linear-gradient(180deg,#F0CDE1 0%,var(--ivory) 100%)}
 .diff .title{max-width:16em}
 .diff__pair{
   width:var(--wrap-narrow);margin-inline:auto;
@@ -616,7 +617,7 @@ h2.title .plum{color:var(--plum-soft)}
 /* =========================================================
    SECTION 18 — closing
    ========================================================= */
-.closing{background:linear-gradient(180deg,var(--ivory) 0%,#EFDAD5 60%,#E7C9C3 100%)}
+.closing{background:linear-gradient(180deg,var(--ivory) 0%,#EFC5DE 55%,#E1A2C9 100%)}
 .closing__stack{
   width:var(--wrap);margin-inline:auto;
   margin-block:clamp(2.6rem,9vw,4rem);
@@ -656,14 +657,14 @@ h2.title .plum{color:var(--plum-soft)}
 /* =========================================================
    footer + sticky CTA
    ========================================================= */
-.foot{background:var(--ink);color:rgba(251,247,242,.7);padding-block:3rem;text-align:center}
+.foot{background:var(--ink);color:rgba(255,240,248,.7);padding-block:3rem;text-align:center}
 .foot__logo{font-family:"Josefin Sans",sans-serif;letter-spacing:.4em;color:var(--ivory);font-size:1.1rem}
 .foot small{display:block;margin-top:1rem;font-size:.72rem;letter-spacing:.1em}
 
 .stickycta{
   position:fixed;left:0;right:0;bottom:0;z-index:50;
   transform:translateY(120%);transition:transform .45s cubic-bezier(.2,.7,.2,1);
-  background:rgba(58,47,43,.96);
+  background:rgba(54,12,41,.96);
   backdrop-filter:blur(6px);
   padding:.8rem clamp(1rem,4vw,1.4rem);
   padding-bottom:calc(.8rem + env(safe-area-inset-bottom));
@@ -684,7 +685,7 @@ h2.title .plum{color:var(--plum-soft)}
   .fv__grid{grid-template-columns:1.22fr .78fr;align-items:center}
   .fv h1{font-size:clamp(2.7rem,4vw,3.7rem)}
   .fv__points-inner{grid-template-columns:repeat(3,1fr);gap:2rem}
-  .point{border-bottom:0;border-right:1px solid rgba(251,247,242,.16);padding:0 1.6rem;display:block}
+  .point{border-bottom:0;border-right:1px solid rgba(255,240,248,.16);padding:0 1.6rem;display:block}
   .point:last-child{border-right:0}
   .point__no{display:block;margin-bottom:.8rem}
   .ph--hero{aspect-ratio:3/4}
@@ -1032,7 +1033,7 @@ h2.title .plum{color:var(--plum-soft)}
   </div>
 
   <div class="wrap" data-reveal>
-    <p class="body" style="color:rgba(251,247,242,.72)">
+    <p class="body" style="color:rgba(255,240,248,.72)">
       ほんの少し加えただけの「配合」ではない。URUCOは、機能性を担うマンゴスチンと、美容素材として選んだプラセンタを、処方の中心に。そこに4つの美容素材を組み合わせています。
     </p>
   </div>
