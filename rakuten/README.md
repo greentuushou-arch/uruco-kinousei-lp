@@ -7,7 +7,7 @@ LP（`../index.html`）はそのまま保管。こちらは **RMSの「商品説
 | 不可 | 代わりに |
 |---|---|
 | JavaScript（`<script>`）| なし。アコーディオン等は使わずQ&Aをそのまま表示 |
-| 外部CSS / 外部フォント（Google Fonts）| 端末標準フォント（明朝＝ヒラギノ明朝/游明朝、ゴシック＝ヒラギノ角ゴ/游ゴシック）|
+| 外部CSS / 外部フォント（Google Fonts）| 端末標準の**ゴシック**（ヒラギノ角ゴ/游ゴシック/Noto Sans JP/メイリオ）。太さ・サイズ・色でメリハリ |
 | `position:fixed` / `sticky`（追従CTA）| 「▲ページ上部のカゴへ」の帯を数か所に配置 |
 | iframe | なし |
 | 外部画像URL（GitHub Pages等）| **R-Cabinet** にアップして `<img src>` を差し替え |
@@ -17,11 +17,13 @@ LP（`../index.html`）はそのまま保管。こちらは **RMSの「商品説
 `<style>` タグ自体は商品説明文で使用可。ただし無効化する店舗設定でも崩れないよう、
 幅・画像・表は各要素の `style=""` にも直接指定済み（`<style>` は色・書体の上乗せのみ）。
 
-### 文字サイズ
+### 文字サイズ・書体
 
-読みやすさ重視で大きめに設定。本文 **21px** ／ 見出し **32px**（FVタグライン 30px）／
-配合表の数値 **26px** ／ 注記 16px。もっと大きく/小さくする場合は `<style>` 冒頭の
-`#uruco-item{ … font-size:21px }` と `#uruco-item h2.t{ font-size:32px }` を調整。
+ゴシックで大きめ。本文 **21px** ／ 見出し **34px**（左にピンクの縦バー・太字800）／
+FVタグライン 32px ／ 配合表の数値 **29px（太字800）** ／「1日 492mg」38px ／ 注記 16px。
+本文中の `270mg` `160μg` `3粒` 等は `<b class="k">`（太字＋ピンク）で強調。
+サイズ調整は `<style>` 冒頭の `#uruco-item{ … font-size:21px }` と
+`#uruco-item h2.t{ font-size:34px }` を変更。
 
 ### レビュー
 
@@ -30,11 +32,25 @@ LP（`../index.html`）はそのまま保管。こちらは **RMSの「商品説
 `https://review.rakuten.co.jp/item/1/【店舗ID】_【商品管理番号】/`
 （RMSの該当商品ページ「レビューを見る」リンクのURLをそのまま貼るのが確実）
 
+## 写真プレースホルダ
+
+写真が入る7か所は、いまは「**写真**」と大きく表示するピンクの点線ボックス（`.photo`）です。
+各ボックスの**直前のコメント**に、差し替え用の `<img>` 1行を入れてあります。
+
+```
+<!-- 画像ができたら下の1行に差し替え：
+<img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/fv.jpg" alt="..."> -->
+<div class="photo"><b>写真</b>fv.jpg ／ ...</div>
+```
+
+画像ができたら、その `<div class="photo">...</div>` を上のコメント内 `<img>` 1行に置き換えるだけ。
+
 ## 入稿手順
 
 1. **R-Cabinet** に下表の画像をアップ（フォルダ例：`uruco/`）。
-2. `item-description.html` の `https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/xxxx.jpg` を
-   自店のCabinet URL（`【店舗ID】`＝RMSのユーザ名）に一括置換。
+2. 各「写真」プレースホルダを、直前コメント内の `<img>` に差し替え。
+   `https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/xxxx.jpg` の
+   `【店舗ID】`（＝RMSのユーザ名）を一括置換。
 3. セクション14の `a.review` の `href` を、自店の商品レビューページURLに差し替え。
 4. RMS → 商品編集 → **「スマートフォン用商品説明文」**（PC用とは別枠）に貼り付け。
    - PC用にも流用可。PCは横幅が広いので、必要なら `max-width:640px` を `720`〜`800` に。
