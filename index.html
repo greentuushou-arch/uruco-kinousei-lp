@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>URUCO ｜ 糖化ストレスに、うるおいという答え。</title>
+<meta name="description" content="機能性表示食品 URUCO。マンゴスチン由来ロダンテノンBが糖化ストレスを軽減し、肌の潤いを保持。デンマーク産豚プラセンタ270mgと4つの美容素材を組み合わせた、大人のためのインナービューティ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   URUCO LP  —  base tokens
+   配色: アイボリー → ダスティローズ / シャンパンゴールドはアクセント
+   書体: Shippori Mincho(見出し・数字) / Zen Kaku Gothic New(本文) / Josefin Sans(欧字)
+   ※ ラグジュアリー美容 × 科学的信頼感。医療・薬機を想起させる表現はしない。
+   ========================================================= */
+:root{
+  --ivory:#FBF7F2;
+  --ivory-deep:#F4EBE0;
+  --paper:#FFFDFA;
+  --rose:#E6C9C4;
+  --rose-mid:#D6A9A2;
+  --rose-deep:#A97169;
+  --rose-ink:#8C574F;
+  --plum:#4B2A43;
+  --plum-soft:#6E4460;
+  --ink:#3A2F2B;
+  --ink-soft:#6E605A;
+  --ink-faint:#9A8B83;
+  --gold:#B9924E;
+  --gold-deep:#9C7738;
+  --gold-pale:#E8D8B8;
+  --line:rgba(58,47,43,.16);
+  --line-soft:rgba(58,47,43,.09);
+  --shadow:0 30px 60px -34px rgba(75,42,67,.35);
+  --wrap:min(88vw, 960px);
+  --wrap-narrow:min(88vw, 660px);
+  --sec-pad:clamp(4.75rem, 14vw, 9.5rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--ink);
+  font-family:"Zen Kaku Gothic New",-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  font-size:clamp(1rem,3.6vw,1.1rem);
+  line-height:1.95;
+  font-feature-settings:"palt" 1;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+p,li,summary,.lead,.body{line-break:strict;text-wrap:pretty}
+@media (max-width:600px){body{padding-bottom:4.5rem}}
+img{max-width:100%;display:block}
+h1,h2,h3,p{margin:0}
+a{color:inherit}
+
+/* ---------- shared layout ---------- */
+.wrap{width:var(--wrap);margin-inline:auto}
+.wrap-narrow{width:var(--wrap-narrow);margin-inline:auto}
+section{padding-block:var(--sec-pad)}
+.bg-paper{background:var(--paper)}
+.bg-deep{background:var(--ivory-deep)}
+.bg-rose{background:linear-gradient(180deg,var(--ivory) 0%,#F2DEDA 55%,#EAD0CB 100%)}
+
+/* ---------- eyebrow / section head ---------- */
+.eyebrow{
+  font-family:"Josefin Sans",sans-serif;
+  font-weight:500;
+  font-size:clamp(.68rem,2.6vw,.8rem);
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+  display:flex;align-items:center;gap:.9em;
+  margin-bottom:1.6rem;
+}
+.eyebrow::before{content:"";width:2.4rem;height:1px;background:var(--gold);flex:none}
+.eyebrow.is-center{justify-content:center}
+
+h2.title{
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  font-size:clamp(1.85rem,6.2vw,3.4rem);
+  line-height:1.5;
+  letter-spacing:.02em;
+  word-break:auto-phrase;
+  text-wrap:pretty;
+}
+h2.title .accent{color:var(--rose-ink)}
+h2.title .plum{color:var(--plum-soft)}
+
+.lead{
+  font-size:clamp(1.05rem,4vw,1.22rem);
+  line-height:2.05;
+  color:var(--ink);
+  margin-top:1.9rem;
+}
+.body{color:var(--ink-soft);margin-top:1.5rem}
+.body + .body{margin-top:1.3rem}
+.note{
+  font-size:clamp(.8rem,3vw,.86rem);
+  line-height:1.85;
+  color:var(--ink-faint);
+  margin-top:1.4rem;
+}
+
+/* ---------- reveal ---------- */
+[data-reveal]{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){[data-reveal]{opacity:1;transform:none;transition:none}}
+
+/* =========================================================
+   brand bar
+   ========================================================= */
+.brandbar{
+  position:sticky;top:0;z-index:40;
+  background:rgba(251,247,242,.86);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.brandbar__inner{
+  width:var(--wrap);margin-inline:auto;
+  display:flex;align-items:baseline;justify-content:space-between;
+  padding-block:.95rem;
+}
+.brandbar__logo{
+  font-family:"Josefin Sans",sans-serif;
+  font-weight:600;letter-spacing:.42em;
+  font-size:clamp(1rem,4vw,1.2rem);
+  color:var(--ink);
+}
+.brandbar__tag{
+  font-size:clamp(.62rem,2.4vw,.72rem);
+  letter-spacing:.24em;
+  color:var(--gold-deep);
+}
+
+/* =========================================================
+   SECTION 01 — First view
+   ========================================================= */
+.fv{
+  position:relative;
+  background:
+    radial-gradient(120% 90% at 88% 8%, #F0DAD5 0%, rgba(240,218,213,0) 58%),
+    linear-gradient(178deg,var(--ivory) 0%,var(--paper) 40%,#F5E6E1 100%);
+  padding-block:clamp(3rem,10vw,5.5rem) 0;
+  overflow:hidden;
+}
+.fv__grid{
+  width:var(--wrap);margin-inline:auto;
+  display:grid;gap:clamp(2.2rem,7vw,3.5rem);
+}
+.fv__badge{
+  display:inline-flex;align-items:center;gap:.7em;
+  font-family:"Josefin Sans",sans-serif;
+  font-size:clamp(.66rem,2.6vw,.76rem);
+  letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold-deep);
+  border:1px solid var(--gold);
+  border-radius:2px;
+  padding:.55em 1.1em;
+}
+.fv__badge::before{content:"";width:.4rem;height:.4rem;background:var(--gold);border-radius:50%}
+.fv h1{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:clamp(2.1rem,8vw,3.5rem);
+  line-height:1.42;
+  letter-spacing:.01em;
+  margin-top:1.5rem;
+  word-break:auto-phrase;
+  text-wrap:pretty;
+}
+.fv h1 .rose{color:var(--rose-ink)}
+.fv__sub{
+  margin-top:1.9rem;
+  font-size:clamp(1rem,4vw,1.16rem);
+  line-height:2.1;
+  color:var(--ink-soft);
+  max-width:34em;
+}
+.fv__sub strong{color:var(--ink);font-weight:500}
+.fv__func{
+  margin-top:2.1rem;
+  padding:1.3rem 1.4rem;
+  border-left:2px solid var(--gold);
+  background:rgba(255,253,250,.6);
+  font-size:clamp(.82rem,3.1vw,.92rem);
+  line-height:1.9;
+  color:var(--ink-soft);
+  max-width:38em;
+}
+/* FV image */
+.fv__visual{position:relative}
+.ph{
+  position:relative;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  gap:.5rem;
+  padding:1.15rem;
+  background:linear-gradient(150deg,#F7ECE3 0%,#EAD2CC 52%,#E2C3BC 100%);
+  border:1px solid var(--line-soft);
+  color:var(--ink-soft);
+  overflow:hidden;
+}
+.ph::before,.ph::after{
+  content:"";position:absolute;width:26px;height:26px;
+  border:1px solid var(--gold);
+}
+.ph::before{top:14px;left:14px;border-right:0;border-bottom:0}
+.ph::after{bottom:14px;right:14px;border-left:0;border-top:0}
+.ph__tag{
+  font-family:"Josefin Sans",sans-serif;
+  font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold-deep);
+}
+.ph__name{font-family:"Josefin Sans",sans-serif;font-size:.82rem;letter-spacing:.08em;color:var(--ink)}
+.ph__desc{font-size:.76rem;line-height:1.75;color:var(--ink-faint);max-width:36em}
+.ph--hero{aspect-ratio:4/5}
+.ph--wide{aspect-ratio:16/10}
+.ph--tall{aspect-ratio:3/4}
+.ph--land{aspect-ratio:3/2}
+
+.fv__points{
+  background:var(--ink);
+  color:var(--ivory);
+  margin-top:clamp(2.5rem,8vw,4rem);
+}
+.fv__points-inner{
+  width:var(--wrap);margin-inline:auto;
+  display:grid;gap:0;
+  padding-block:clamp(2.4rem,7vw,3.4rem);
+}
+.point{
+  padding-block:1.5rem;
+  border-bottom:1px solid rgba(251,247,242,.16);
+  display:grid;grid-template-columns:auto 1fr;gap:1.2rem;align-items:baseline;
+}
+.point:last-child{border-bottom:0}
+.point__no{
+  font-family:"Josefin Sans",sans-serif;
+  font-size:.72rem;letter-spacing:.24em;
+  color:var(--gold-pale);
+}
+.point__txt{
+  font-family:"Shippori Mincho",serif;
+  font-weight:500;
+  font-size:clamp(1.15rem,4.6vw,1.5rem);
+  line-height:1.5;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+.cta-band{padding-block:clamp(3rem,9vw,4.5rem)}
+.cta{
+  width:var(--wrap-narrow);margin-inline:auto;
+  text-align:center;
+}
+.cta__label{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.05rem,4.2vw,1.35rem);
+  line-height:1.7;
+  margin-bottom:1.5rem;
+}
+.btn{
+  display:inline-block;
+  font-family:"Josefin Sans",sans-serif;
+  font-weight:500;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-size:clamp(.82rem,3.2vw,.94rem);
+  text-decoration:none;
+  padding:1.15em 2.6em;
+  background:var(--rose-deep);
+  color:var(--paper);
+  border:1px solid var(--rose-deep);
+  border-radius:3px;
+  transition:background .3s ease,color .3s ease,transform .3s ease;
+}
+.btn:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--gold)}
+.btn--ghost:hover{background:var(--gold);color:var(--paper);border-color:var(--gold)}
+.btn__ja{
+  display:block;
+  font-family:"Zen Kaku Gothic New",sans-serif;
+  letter-spacing:.08em;text-transform:none;
+  font-size:.7em;margin-top:.5em;opacity:.8;
+}
+
+/* =========================================================
+   generic split
+   ========================================================= */
+.split{
+  width:var(--wrap);margin-inline:auto;
+  display:grid;gap:clamp(2rem,7vw,3.2rem);
+}
+.split__media .ph{aspect-ratio:3/4}
+
+/* =========================================================
+   SECTION 02 — 共感
+   ========================================================= */
+.empathy .title{max-width:14em}
+.empathy__list{
+  width:var(--wrap-narrow);margin-inline:auto;
+  margin-top:clamp(2.5rem,8vw,3.5rem);
+  border-top:1px solid var(--line);
+}
+.empathy__list li{
+  list-style:none;
+  padding-block:1.15rem;
+  border-bottom:1px solid var(--line);
+  font-size:clamp(1rem,3.9vw,1.12rem);
+  display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline;
+}
+.empathy__list li::before{
+  content:"";width:.5rem;height:.5rem;border:1px solid var(--rose-deep);
+  transform:rotate(45deg);flex:none;margin-top:.5em;
+}
+.empathy__list ul{margin:0;padding:0}
+
+/* =========================================================
+   SECTION 03 — 糖化 diagram
+   ========================================================= */
+.glyc{
+  width:var(--wrap-narrow);margin-inline:auto;
+  margin-top:clamp(2.6rem,8vw,3.6rem);
+  display:flex;flex-direction:column;align-items:center;gap:0;
+}
+.glyc__row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:center}
+.glyc__node{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1rem,4vw,1.15rem);
+  color:var(--ink);
+  border:1px solid var(--line);
+  background:var(--paper);
+  border-radius:50%;
+  width:clamp(5.2rem,20vw,6.4rem);
+  height:clamp(5.2rem,20vw,6.4rem);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;
+}
+.glyc__node small{
+  font-family:"Josefin Sans",sans-serif;
+  font-size:.56rem;letter-spacing:.14em;color:var(--ink-faint);
+  margin-top:.2em;text-transform:uppercase;
+}
+.glyc__node--lg{
+  border-color:var(--plum-soft);color:var(--plum);
+  width:clamp(6rem,24vw,7.6rem);height:clamp(6rem,24vw,7.6rem);
+  font-weight:700;
+}
+.glyc__node--out{border-style:dashed;border-color:var(--rose-deep);color:var(--rose-ink)}
+.glyc__op{font-family:"Shippori Mincho",serif;font-size:1.4rem;color:var(--ink-faint)}
+.glyc__arrow{width:1px;height:2.6rem;background:var(--line);position:relative;margin-block:.9rem}
+.glyc__arrow::after{
+  content:"";position:absolute;left:50%;bottom:0;
+  width:7px;height:7px;border-right:1px solid var(--ink-faint);border-bottom:1px solid var(--ink-faint);
+  transform:translateX(-50%) rotate(45deg);
+}
+.glyc__focus{
+  margin-top:2.4rem;text-align:center;
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.15rem,4.6vw,1.5rem);
+  line-height:1.7;
+}
+.glyc__focus .u{
+  border-bottom:2px solid var(--gold);
+  padding-bottom:.1em;
+}
+
+/* =========================================================
+   big figure set-pieces
+   ========================================================= */
+.figure-hero{
+  width:var(--wrap);margin-inline:auto;
+  margin-top:clamp(2.4rem,8vw,3.4rem);
+  display:flex;flex-wrap:wrap;align-items:baseline;gap:.4em 1em;
+}
+.figure-hero .num{
+  font-family:"Shippori Mincho",serif;
+  font-weight:800;
+  font-size:clamp(4.5rem,26vw,12rem);
+  line-height:.9;
+  letter-spacing:-.02em;
+  color:var(--ink);
+}
+.figure-hero .unit{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.4rem,6vw,2.4rem);
+  color:var(--rose-ink);
+}
+.figure-hero .cap{
+  font-family:"Josefin Sans",sans-serif;
+  font-size:clamp(.7rem,2.8vw,.82rem);
+  letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold-deep);
+  width:100%;margin-top:1rem;
+}
+
+/* =========================================================
+   SECTION 07 — 1 + 5 BEAUTY FORMULA
+   ========================================================= */
+.formula{background:linear-gradient(180deg,var(--ivory) 0%,#F1DED9 100%)}
+.formula__eq{
+  width:var(--wrap);margin-inline:auto;
+  display:flex;align-items:center;justify-content:center;gap:clamp(.6rem,4vw,1.6rem);
+  margin-block:clamp(2rem,7vw,3rem);
+}
+.formula__eq span{
+  font-family:"Shippori Mincho",serif;font-weight:800;
+  font-size:clamp(5rem,30vw,14rem);line-height:.85;color:var(--ink);
+}
+.formula__eq .op{font-weight:400;color:var(--rose-deep);font-size:clamp(2.4rem,12vw,5rem)}
+.formula__cap{
+  text-align:center;
+  font-family:"Josefin Sans",sans-serif;
+  letter-spacing:.4em;text-transform:uppercase;
+  font-size:clamp(.78rem,3.2vw,1rem);
+  color:var(--gold-deep);
+}
+.formula__cols{
+  width:var(--wrap);margin-inline:auto;
+  margin-top:clamp(2.8rem,9vw,4rem);
+  display:grid;gap:2px;
+  background:var(--line-soft);
+  border:1px solid var(--line-soft);
+}
+.formula__col{background:var(--paper);padding:clamp(1.6rem,6vw,2.4rem)}
+.formula__col h3{
+  font-family:"Josefin Sans",sans-serif;
+  font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold-deep);margin-bottom:1rem;
+}
+.formula__col .k{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.25rem,5vw,1.7rem);line-height:1.6;
+}
+.formula__col ul{margin:.6rem 0 0;padding:0;list-style:none}
+.formula__col li{
+  padding-block:.6rem;border-bottom:1px solid var(--line-soft);
+  font-size:clamp(.98rem,3.8vw,1.08rem);
+}
+.formula__col li:last-child{border-bottom:0}
+.formula__foot{
+  width:var(--wrap);margin-inline:auto;margin-top:2rem;
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.05rem,4.2vw,1.3rem);text-align:center;
+}
+
+/* =========================================================
+   SECTION 09 — 配合の見える化 (spec sheet)
+   ========================================================= */
+.reveal-spec{background:var(--ink);color:var(--ivory)}
+.reveal-spec .eyebrow{color:var(--gold-pale)}
+.reveal-spec .eyebrow::before{background:var(--gold-pale)}
+.reveal-spec h2.title{color:var(--ivory)}
+.reveal-spec h2.title .accent{color:var(--rose-mid)}
+.spec-sub{
+  width:var(--wrap);margin-inline:auto;margin-top:1.6rem;
+  color:rgba(251,247,242,.72);font-size:clamp(1rem,3.9vw,1.12rem);
+}
+.spec{
+  width:var(--wrap);margin-inline:auto;
+  margin-top:clamp(2.6rem,8vw,3.6rem);
+  border-top:1px solid rgba(251,247,242,.22);
+}
+.spec__row{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  padding-block:1.15rem;
+  border-bottom:1px solid rgba(251,247,242,.16);
+}
+.spec__row .name{font-size:clamp(.98rem,3.8vw,1.1rem)}
+.spec__row .val{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.4rem,6vw,2.1rem);
+  color:var(--ivory);white-space:nowrap;
+}
+.spec__row .val small{font-size:.5em;color:var(--gold-pale);margin-left:.15em}
+.spec__note{
+  width:var(--wrap);margin-inline:auto;margin-top:1.2rem;
+  font-size:.8rem;color:rgba(251,247,242,.5);
+}
+.spec__hero{
+  width:var(--wrap);margin-inline:auto;
+  margin-top:clamp(2.8rem,9vw,4rem);
+  border:1px solid var(--gold);
+  padding:clamp(1.8rem,7vw,2.8rem);
+  text-align:center;
+}
+.spec__hero .k{
+  font-family:"Josefin Sans",sans-serif;letter-spacing:.2em;text-transform:uppercase;
+  font-size:clamp(.72rem,2.8vw,.85rem);color:var(--gold-pale);
+}
+.spec__hero .big{
+  font-family:"Shippori Mincho",serif;font-weight:700;
+  font-size:clamp(2.2rem,10.5vw,4.6rem);line-height:1.15;margin-top:.4rem;
+}
+.spec__hero .big span{color:var(--rose-mid);font-size:.5em}
+.spec__hero .fn{font-size:.78rem;color:rgba(251,247,242,.5);margin-top:.6rem}
+
+/* =========================================================
+   SECTION 11 — 4 beauty materials
+   ========================================================= */
+.materials{
+  width:var(--wrap);margin-inline:auto;
+  margin-top:clamp(2.6rem,8vw,3.6rem);
+  border-top:1px solid var(--line);
+}
+.material{
+  padding-block:clamp(1.6rem,5vw,2.2rem);
+  border-bottom:1px solid var(--line);
+  display:grid;gap:.5rem;
+}
+.material__en{
+  font-family:"Josefin Sans",sans-serif;
+  font-size:clamp(1.5rem,6vw,2.1rem);
+  letter-spacing:.08em;
+  color:var(--rose-mid);
+}
+.material__ja{
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.15rem,4.6vw,1.4rem);
+}
+.material__txt{color:var(--ink-soft);font-size:clamp(.94rem,3.7vw,1.04rem);margin-top:.3rem}
+
+/* =========================================================
+   SECTION 12 — differentiation
+   ========================================================= */
+.diff{background:linear-gradient(180deg,#F1DED9 0%,var(--ivory) 100%)}
+.diff .title{max-width:16em}
+.diff__pair{
+  width:var(--wrap-narrow);margin-inline:auto;
+  margin-top:clamp(2.4rem,8vw,3.2rem);
+  display:flex;flex-wrap:wrap;gap:1rem;
+}
+.diff__chip{
+  font-family:"Shippori Mincho",serif;
+  border:1px solid var(--rose-deep);
+  color:var(--rose-ink);
+  padding:.7em 1.3em;
+  font-size:clamp(.92rem,3.6vw,1.05rem);
+}
+
+/* =========================================================
+   SECTION 14 — 女性にも男性にも / big statement
+   ========================================================= */
+.statement{
+  min-height:78vh;display:flex;flex-direction:column;justify-content:center;
+}
+.statement h2{
+  font-family:"Shippori Mincho",serif;font-weight:700;
+  font-size:clamp(2.2rem,9vw,4.4rem);line-height:1.4;
+}
+.statement .body{max-width:32em}
+
+/* =========================================================
+   SECTION 15 — こんな方に
+   ========================================================= */
+.forwho{
+  width:var(--wrap-narrow);margin-inline:auto;
+  margin-top:clamp(2.4rem,8vw,3.2rem);
+  columns:1;
+}
+.forwho li{
+  list-style:none;padding-block:.95rem;
+  border-bottom:1px solid var(--line);
+  padding-left:1.8rem;position:relative;
+  font-size:clamp(.98rem,3.8vw,1.1rem);
+}
+.forwho li::before{
+  content:"";position:absolute;left:0;top:1.55em;
+  width:.85rem;height:1px;background:var(--gold);
+}
+.forwho ul{margin:0;padding:0}
+
+/* =========================================================
+   SECTION 16 — 飲み方
+   ========================================================= */
+.howto{text-align:center}
+.howto__num{
+  font-family:"Shippori Mincho",serif;font-weight:800;
+  font-size:clamp(5rem,26vw,11rem);line-height:1;color:var(--ink);
+}
+.howto__num span{font-size:.28em;color:var(--rose-ink);margin-left:.15em}
+
+/* =========================================================
+   SECTION 17 — FAQ
+   ========================================================= */
+.faq{width:var(--wrap-narrow);margin-inline:auto;margin-top:clamp(2.4rem,8vw,3.2rem)}
+.faq details{border-top:1px solid var(--line)}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{
+  list-style:none;cursor:pointer;
+  padding-block:1.25rem;
+  display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:baseline;
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1rem,4vw,1.15rem);
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .q{font-family:"Josefin Sans",sans-serif;color:var(--gold-deep);font-size:.9rem}
+.faq summary .mk{width:1rem;height:1rem;position:relative;flex:none;align-self:center}
+.faq summary .mk::before,.faq summary .mk::after{
+  content:"";position:absolute;inset:50% 0 auto 0;height:1px;background:var(--ink);
+}
+.faq summary .mk::after{transform:rotate(90deg);transition:transform .3s ease}
+.faq details[open] summary .mk::after{transform:rotate(0)}
+.faq__a{
+  padding:0 0 1.5rem 2.9rem;
+  color:var(--ink-soft);
+  font-size:clamp(.94rem,3.7vw,1.02rem);
+}
+
+/* =========================================================
+   SECTION 18 — closing
+   ========================================================= */
+.closing{background:linear-gradient(180deg,var(--ivory) 0%,#EFDAD5 60%,#E7C9C3 100%)}
+.closing__stack{
+  width:var(--wrap);margin-inline:auto;
+  margin-block:clamp(2.6rem,9vw,4rem);
+  font-family:"Shippori Mincho",serif;
+  font-weight:700;
+  font-size:clamp(1.7rem,7vw,3rem);
+  line-height:1.7;
+}
+.closing__stack .op{color:var(--rose-deep);font-weight:400;display:inline-block;margin-inline:.25em}
+.closing__sign{
+  width:var(--wrap);margin-inline:auto;
+  font-family:"Shippori Mincho",serif;
+  font-size:clamp(1.8rem,7.5vw,3.2rem);
+  line-height:1.6;
+}
+.closing__brand{
+  font-family:"Josefin Sans",sans-serif;letter-spacing:.4em;
+  font-size:clamp(1.1rem,4.5vw,1.5rem);margin-top:1.4rem;
+}
+.closing__brand small{display:block;letter-spacing:.24em;font-size:.5em;color:var(--gold-deep);margin-top:.6em}
+
+/* =========================================================
+   SECTION 19 — legal
+   ========================================================= */
+.legal{background:var(--ivory-deep);font-size:clamp(.78rem,2.9vw,.84rem);line-height:1.9;color:var(--ink-soft)}
+.legal h2{
+  font-family:"Josefin Sans",sans-serif;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--gold-deep);margin-bottom:1.4rem;
+}
+.legal .block{margin-top:1.6rem}
+.legal .k747{
+  font-family:"Shippori Mincho",serif;font-size:1rem;color:var(--ink);
+}
+.legal ul{margin:.6rem 0 0;padding-left:1.2rem}
+.legal li{margin-block:.35rem}
+
+/* =========================================================
+   footer + sticky CTA
+   ========================================================= */
+.foot{background:var(--ink);color:rgba(251,247,242,.7);padding-block:3rem;text-align:center}
+.foot__logo{font-family:"Josefin Sans",sans-serif;letter-spacing:.4em;color:var(--ivory);font-size:1.1rem}
+.foot small{display:block;margin-top:1rem;font-size:.72rem;letter-spacing:.1em}
+
+.stickycta{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;
+  transform:translateY(120%);transition:transform .45s cubic-bezier(.2,.7,.2,1);
+  background:rgba(58,47,43,.96);
+  backdrop-filter:blur(6px);
+  padding:.8rem clamp(1rem,4vw,1.4rem);
+  padding-bottom:calc(.8rem + env(safe-area-inset-bottom));
+  display:flex;align-items:center;gap:1rem;justify-content:space-between;
+}
+.stickycta.show{transform:none}
+.stickycta__txt{
+  color:var(--ivory);font-family:"Shippori Mincho",serif;
+  font-size:clamp(.86rem,3.4vw,1rem);line-height:1.4;
+}
+.stickycta .btn{padding:.9em 1.6em;flex:none;background:var(--rose-deep);border-color:var(--rose-deep)}
+.stickycta .btn:hover{background:var(--rose-mid);border-color:var(--rose-mid)}
+
+/* =========================================================
+   responsive — PCとスマホは別々に調整
+   ========================================================= */
+@media (min-width:820px){
+  .fv__grid{grid-template-columns:1.22fr .78fr;align-items:center}
+  .fv h1{font-size:clamp(2.7rem,4vw,3.7rem)}
+  .fv__points-inner{grid-template-columns:repeat(3,1fr);gap:2rem}
+  .point{border-bottom:0;border-right:1px solid rgba(251,247,242,.16);padding:0 1.6rem;display:block}
+  .point:last-child{border-right:0}
+  .point__no{display:block;margin-bottom:.8rem}
+  .ph--hero{aspect-ratio:3/4}
+
+  .split{grid-template-columns:1fr 1fr;align-items:center}
+  .split--media-left .split__media{order:-1}
+
+  .empathy__list li{font-size:1.14rem}
+
+  .formula__cols{grid-template-columns:1fr 1fr}
+  .materials{display:grid;grid-template-columns:1fr 1fr;column-gap:3rem;border-top:0}
+  .material{border-top:1px solid var(--line)}
+
+  .forwho ul{columns:2;column-gap:3rem}
+  .forwho li:first-child{border-top:1px solid var(--line)}
+
+  .stickycta{display:none}
+}
+@media (min-width:1180px){
+  .fv h1{font-size:3.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="brandbar">
+  <div class="brandbar__inner">
+    <span class="brandbar__logo">URUCO</span>
+    <span class="brandbar__tag">機能性表示食品</span>
+  </div>
+</header>
+
+<!-- =====================================================
+     SECTION 01 — FIRST VIEW
+     ===================================================== -->
+<section class="fv" id="top">
+  <div class="fv__grid">
+    <div class="fv__copy">
+      <span class="fv__badge">機能性表示食品 URUCO</span>
+      <h1>糖化ストレスに<br><span class="rose">うるおい</span>という答え</h1>
+      <p class="fv__sub">
+        美容を、感覚ではなく「設計」で考える。<br>
+        マンゴスチン由来<strong>ロダンテノンB</strong>と、<strong>デンマーク産豚プラセンタ</strong>。さらに4つの美容素材を組み合わせた、大人のためのインナービューティ。
+      </p>
+      <p class="fv__func">
+        本品はロダンテノンBを含みます。ロダンテノンBは、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。
+      </p>
+    </div>
+    <div class="fv__visual">
+      <!-- IMAGE PROMPT (fv-hero):
+           日本の高級美容ブランドの広告写真。大人向けインナービューティサプリメント「URUCO」のパッケージを主役として中央からやや右に配置。
+           横に成熟したマンゴスチンの果実と美しい断面。透明感のある水滴と柔らかな自然光。
+           背景はアイボリーホワイトからダスティローズへの繊細なグラデーション。シャンパンゴールドのごく控えめなアクセント。
+           高級化粧品ブランドのような洗練された静かな美しさ。科学的な信頼感と自然由来素材の上質さを両立。文字なし。フォトリアル、高品質。 -->
+      <figure class="ph ph--hero" role="img" aria-label="URUCOのパッケージとマンゴスチン、水滴、柔らかな光">
+        <span class="ph__tag">Main Visual</span>
+        <span class="ph__name">fv-hero.jpg ／ SP 4:5・PC 3:4</span>
+        <span class="ph__desc">パッケージを主役に、マンゴスチンの果実と断面・水滴・柔らかな光。背景はアイボリー→ダスティローズ。文字なし。</span>
+      </figure>
+    </div>
+  </div>
+
+  <div class="fv__points">
+    <div class="fv__points-inner">
+      <div class="point"><span class="point__no">POINT 01</span><span class="point__txt">糖化ストレスを軽減</span></div>
+      <div class="point"><span class="point__no">POINT 02</span><span class="point__txt">肌の潤いを保持</span></div>
+      <div class="point"><span class="point__no">POINT 03</span><span class="point__txt">デンマーク産豚<br>プラセンタ配合</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 1 -->
+<div class="cta-band bg-paper">
+  <div class="cta" data-reveal>
+    <p class="cta__label">「潤い」を、設計から考える。</p>
+    <a class="btn" href="#buy">URUCOを詳しく見る</a>
+  </div>
+</div>
+
+<!-- =====================================================
+     SECTION 02 — 共感
+     ===================================================== -->
+<section class="empathy bg-deep">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 02 — 気づき</span>
+    <h2 class="title">最近、肌の<span class="accent">「潤い」</span>が気になっていませんか？</h2>
+    <p class="body">
+      毎日スキンケアをしている。美容にも気をつかっている。それでも、以前とは少し違う気がする。
+    </p>
+    <p class="body">
+      年齢を重ねるにつれて、美容について考えることも少しずつ変わっていきます。外側からのお手入れだけではなく、毎日の食生活から美容を考える。そんな新しい習慣として、URUCOは生まれました。
+    </p>
+  </div>
+
+  <div class="empathy__list" data-reveal>
+    <ul>
+      <li>最近、肌の潤いが気になる</li>
+      <li>年齢に応じた美容を始めたい</li>
+      <li>スキンケア＋αを探している</li>
+      <li>美容サプリも成分を見て選びたい</li>
+    </ul>
+  </div>
+
+  <div class="wrap" style="margin-top:clamp(2.6rem,8vw,3.6rem)" data-reveal>
+    <!-- IMAGE PROMPT (people-mature):
+         40代から50代の日本人男女。過度に若々しく加工せず、年齢を重ねた自然な魅力を持つ上品な男女が明るい室内でリラックスしている。
+         清潔感、健康的な肌、穏やかな表情。美容を楽しむ成熟した大人という印象。女性だけの美容広告ではなく、男性も自然に参加している構図。
+         淡いベージュ、白、ローズの上質なインテリア。自然光。文字なし。「若返り」ではなく年齢を受け入れながら美しく過ごす人物像。 -->
+    <figure class="ph ph--land" role="img" aria-label="年齢を重ねた大人の男女がくつろぐ様子">
+      <span class="ph__tag">People</span>
+      <span class="ph__name">people-mature.jpg ／ 3:2</span>
+      <span class="ph__desc">40〜50代中心の大人の男女。若返りではなく、年齢を受け入れ美しく過ごす人物像。女性だけに限定しない。</span>
+    </figure>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 03 — 糖化ストレスとは
+     ===================================================== -->
+<section class="bg-paper">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 03 — 糖化ストレス</span>
+    <h2 class="title">美容でいま注目したい<br><span class="plum">「糖化ストレス」</span></h2>
+    <p class="body">
+      私たちの体内では、糖とたんぱく質が反応する「糖化」が起こります。その過程でつくられるもののひとつが、AGEs（最終糖化産物）です。
+    </p>
+    <p class="body">
+      URUCOが着目したのは、糖化ストレスと肌の潤いの関係。だからこそURUCOは、美容成分をただ数多く配合するのではなく、糖化ストレスに着目した機能性関与成分を処方の中心にしました。
+    </p>
+  </div>
+
+  <div class="glyc" data-reveal>
+    <div class="glyc__row">
+      <span class="glyc__node">糖<small>Sugar</small></span>
+      <span class="glyc__op">＋</span>
+      <span class="glyc__node">たんぱく質<small>Protein</small></span>
+    </div>
+    <span class="glyc__arrow" aria-hidden="true"></span>
+    <span class="glyc__node glyc__node--lg">糖化<small>Glycation</small></span>
+    <span class="glyc__arrow" aria-hidden="true"></span>
+    <span class="glyc__node glyc__node--out">AGEs<small>最終糖化産物</small></span>
+  </div>
+  <p class="glyc__focus" data-reveal>
+    URUCOは、この<span class="u">「糖化ストレス」</span>に着目。<br>
+    そして、肌の潤いを保持する機能へ。
+  </p>
+  <p class="note wrap-narrow" data-reveal>
+    ※一般的な糖化の仕組みについての説明です。シミ・シワ・たるみ等の原因を示すものではありません。URUCOの届出機能は「肌の潤いの保持」です。
+  </p>
+</section>
+
+<!-- =====================================================
+     SECTION 04 — ロダンテノンB
+     ===================================================== -->
+<section class="bg-deep">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 04 — 機能性関与成分</span>
+    <h2 class="title">糖化ストレスを軽減し<br><span class="accent">肌の潤いを保持</span></h2>
+    <p class="lead">URUCOの機能性関与成分「ロダンテノンB」</p>
+    <p class="body">
+      URUCOには、マンゴスチン由来の機能性関与成分、ロダンテノンBを配合しています。ロダンテノンBには、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。
+    </p>
+  </div>
+
+  <div class="figure-hero" data-reveal>
+    <span class="num">160</span><span class="unit">μg</span>
+    <span class="cap">Rhodanthenone B ／ 1日摂取目安量3粒あたり・機能性関与成分</span>
+  </div>
+</section>
+
+<!-- CTA 2 -->
+<div class="cta-band bg-paper">
+  <div class="cta" data-reveal>
+    <p class="cta__label">機能性で選ぶ、大人のインナービューティ。</p>
+    <a class="btn" href="#buy">URUCOを詳しく見る</a>
+  </div>
+</div>
+
+<!-- =====================================================
+     SECTION 05 — 科学的根拠
+     ===================================================== -->
+<section class="bg-paper">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 05 — 科学的根拠</span>
+    <h2 class="title">「何となく」ではなく<br>科学的根拠のある美容習慣へ</h2>
+    <p class="body">
+      ロダンテノンBを含むマンゴスチンエキスについては、健常女性を対象としたプラセボ対照二重盲検試験が実施されています。資料では、マンゴスチンエキス200mg／日を摂取した試験で評価が行われています。
+    </p>
+    <p class="body">
+      機能性表示食品として、「糖化ストレスを軽減することにより肌の潤いを保持する」という機能が届け出られています。肌の潤いに関する機能を、研究データに基づいて評価しています。
+    </p>
+    <p class="note">
+      ※本品そのものを使用した臨床試験ではなく、機能性関与成分についての研究レビューに基づく表示です。届出機能と直接関係しないデータ（血管硬化度など）は掲載していません。
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 06 — マンゴスチン
+     ===================================================== -->
+<section class="bg-deep">
+  <div class="split split--media-left" data-reveal>
+    <div class="split__text">
+      <span class="eyebrow">Section 06 — 原料</span>
+      <h2 class="title"><span class="plum">「果物の女王」</span><br>マンゴスチン</h2>
+      <p class="body">
+        東南アジアを中心に栽培されるマンゴスチン。その上品で繊細な味わいから、「果物の女王」とも呼ばれてきました。
+      </p>
+      <p class="body">
+        URUCOが使用しているマンゴスチンエキスは、その紫色の果皮を原料としています。マンゴスチンに含まれる成分のひとつが、ロダンテノンB。自然由来の素材と研究の組み合わせが、URUCOの機能性を支えています。
+      </p>
+    </div>
+    <div class="split__media">
+      <!-- IMAGE PROMPT (mangosteen):
+           高級美容サプリメント広告用のマンゴスチン素材写真。成熟した紫色のマンゴスチン果実と、美しくカットされた白い果肉、厚い紫色の果皮を強調。
+           背景は白と淡いローズ。自然光による透明感。植物学的でありながら医療的ではない。南国感を強くしすぎず、
+           高級スキンケアブランドの原料紹介のような洗練された構図。余白を多く取り、説明テキストを後から配置できる。文字なし。 -->
+      <figure class="ph ph--tall" role="img" aria-label="マンゴスチンの果実と断面、紫色の果皮">
+        <span class="ph__tag">Ingredient</span>
+        <span class="ph__name">mangosteen.jpg ／ 3:4</span>
+        <span class="ph__desc">丸ごと＋カット断面。果肉より紫色の果皮をしっかり見せる。余白を広く。文字なし。</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 07 — 1 + 5 BEAUTY FORMULA  【差別化の山場 1】
+     ===================================================== -->
+<section class="formula">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow is-center" style="justify-content:center">Section 07 — Beauty Formula</span>
+    <h2 class="title" style="text-align:center;max-width:20em;margin-inline:auto">
+      でもURUCOは、<span class="accent">「機能性だけ」</span>で終わらせません
+    </h2>
+    <p class="body" style="text-align:center;max-width:30em;margin-inline:auto">
+      肌の潤いを考える機能性表示食品なら、ロダンテノンBだけでも商品はつくれます。それでもURUCOは、そこでは終わりませんでした。美容を、ひとつの成分だけで考えたくなかったから。
+    </p>
+  </div>
+
+  <div class="formula__eq" data-reveal>
+    <span>1</span><span class="op">＋</span><span>5</span>
+  </div>
+  <p class="formula__cap" data-reveal>Beauty Formula</p>
+
+  <div class="formula__cols" data-reveal>
+    <div class="formula__col">
+      <h3>1つの機能性関与成分</h3>
+      <p class="k">ロダンテノンB</p>
+    </div>
+    <div class="formula__col">
+      <h3>5つの美容素材</h3>
+      <ul>
+        <li>デンマーク産豚プラセンタ</li>
+        <li>エラスチン</li>
+        <li>コラーゲンペプチド</li>
+        <li>セラミド</li>
+        <li>L-シスチン</li>
+      </ul>
+    </div>
+  </div>
+  <p class="formula__foot" data-reveal>URUCOは、この6素材で構成されています。</p>
+</section>
+
+<!-- =====================================================
+     SECTION 08 — プラセンタ 270mg  【差別化の山場 2】
+     ===================================================== -->
+<section class="bg-deep">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 08 — もうひとつの主役</span>
+    <h2 class="title">デンマーク産<br><span class="accent">豚プラセンタ</span></h2>
+    <p class="body">
+      URUCOが、マンゴスチンと並んで大切にした素材。それが、デンマーク産豚プラセンタです。プラセンタは、美容を意識する人の間で長く親しまれてきた素材。
+    </p>
+  </div>
+
+  <div class="figure-hero" data-reveal>
+    <span class="num">270</span><span class="unit">mg / DAY</span>
+    <span class="cap">デンマーク産 豚プラセンタエキス末 ／ 1日摂取目安量3粒あたり</span>
+  </div>
+
+  <div class="wrap" data-reveal>
+    <p class="body">
+      配合表では、1粒300mgのうち豚プラセンタエキス末が90mgを占めています。「配合しています」と言うだけではなく、どれだけ入っているのかまで、きちんと伝えたい。URUCOは、そんな考えから処方されています。
+    </p>
+  </div>
+
+  <div class="split split--media-left" style="margin-top:clamp(2.6rem,8vw,3.6rem)" data-reveal>
+    <div class="split__text">
+      <span class="eyebrow">Section 09 — 原料の背景</span>
+      <h2 class="title">毎日口にするものだから<br>「どこから来たか」まで考える</h2>
+      <p class="body">
+        URUCOに使用するデンマーク産豚プラセンタは、豚満期胎盤をミンチ処理し、酵素で分解・抽出。その後、不純物を取り除き、抽出したエキスを濃縮する工程を経ています。
+      </p>
+      <p class="body">
+        原料資料では、デンマーク産豚について、抗生物質・合成抗菌剤、成長ホルモン、農薬・PCB、重金属などの管理についても説明されています。華やかなイメージだけではなく、原料の背景まで大切にする。それもURUCOの品質です。
+      </p>
+    </div>
+    <div class="split__media">
+      <!-- IMAGE PROMPT (placenta-origin):
+           プレミアム美容サプリメントの原料品質を表現する広告ビジュアル。北欧デンマークの澄んだ自然環境、清潔で近代的な食品研究施設、
+           透明な抽出液と白い原料粉末を組み合わせる。豚や胎盤を直接的・生々しく描写しない。安全性、清潔感、品質管理、トレーサビリティを感じさせる。
+           白、淡いブルー、アイボリー、シャンパンゴールド。日本の高級美容ブランドの広告のような上品さ。文字なし。 -->
+      <figure class="ph ph--tall" role="img" aria-label="デンマークの自然風景と清潔な研究設備、白い粉末">
+        <span class="ph__tag">Origin — Denmark</span>
+        <span class="ph__name">placenta-origin.jpg ／ 3:4</span>
+        <span class="ph__desc">デンマークの自然風景・清潔な研究設備・白い粉末または抽出液。豚胎盤そのものの写真は使用しない。</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CTA 3 -->
+<div class="cta-band bg-paper">
+  <div class="cta" data-reveal>
+    <p class="cta__label">配合しているか、ではなく、<br>どれだけ入っているか。</p>
+    <a class="btn" href="#buy">URUCOを詳しく見る</a>
+  </div>
+</div>
+
+<!-- =====================================================
+     SECTION 09(本文) — 配合の見える化  【差別化の山場 3】
+     ===================================================== -->
+<section class="reveal-spec">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 10 — 配合の見える化</span>
+    <h2 class="title">美しさを語る前に<br><span class="accent">中身を見てください</span></h2>
+  </div>
+  <p class="spec-sub" data-reveal>URUCOは、配合量まで公開します。</p>
+
+  <div class="spec" data-reveal>
+    <div class="spec__row"><span class="name">豚プラセンタエキス末</span><span class="val">270<small>mg</small></span></div>
+    <div class="spec__row"><span class="name">マンゴスチンエキス末</span><span class="val">222<small>mg</small></span></div>
+    <div class="spec__row"><span class="name">エラスチン</span><span class="val">27<small>mg</small></span></div>
+    <div class="spec__row"><span class="name">L-シスチン</span><span class="val">13.5<small>mg</small></span></div>
+    <div class="spec__row"><span class="name">コラーゲンペプチド</span><span class="val">9<small>mg</small></span></div>
+    <div class="spec__row"><span class="name">セラミド原料</span><span class="val">1.35<small>mg</small></span></div>
+  </div>
+  <p class="spec__note" data-reveal>※配合表の1粒当たり数値を、1日摂取目安量3粒換算で表記しています。</p>
+
+  <div class="spec__hero" data-reveal>
+    <span class="k">プラセンタ ＋ マンゴスチン</span>
+    <div class="big">1日 492<span>mg</span></div>
+    <p class="fn">※原料エキス末として（豚プラセンタエキス末270mg＋マンゴスチンエキス末222mg）</p>
+  </div>
+
+  <div class="wrap" data-reveal>
+    <p class="body" style="color:rgba(251,247,242,.72)">
+      ほんの少し加えただけの「配合」ではない。URUCOは、機能性を担うマンゴスチンと、美容素材として選んだプラセンタを、処方の中心に。そこに4つの美容素材を組み合わせています。
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 11 — 4つの美容素材
+     ===================================================== -->
+<section class="bg-paper">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 11 — ＋4 Materials</span>
+    <h2 class="title">さらに、美容を考えた<br>4つの素材をプラス</h2>
+  </div>
+
+  <div class="materials" data-reveal>
+    <div class="material">
+      <span class="material__en">ELASTIN</span>
+      <span class="material__ja">エラスチン</span>
+      <span class="material__txt">コラーゲンとともに、身体の弾性に関わるたんぱく質として知られる成分。美容素材として注目されています。</span>
+    </div>
+    <div class="material">
+      <span class="material__en">COLLAGEN PEPTIDE</span>
+      <span class="material__ja">コラーゲンペプチド</span>
+      <span class="material__txt">美容素材として広く知られているコラーゲンを、URUCOの美容設計にプラス。</span>
+    </div>
+    <div class="material">
+      <span class="material__en">CERAMIDE</span>
+      <span class="material__ja">セラミド</span>
+      <span class="material__txt">潤いを意識する人にはおなじみの美容素材。URUCOの「潤い」を考えたコンセプトに合わせて配合しました。</span>
+    </div>
+    <div class="material">
+      <span class="material__en">L-CYSTINE</span>
+      <span class="material__ja">L-シスチン</span>
+      <span class="material__txt">髪や爪などにも存在するアミノ酸のひとつ。毎日の美容習慣を考えて選んだ素材です。</span>
+    </div>
+  </div>
+  <p class="note wrap" data-reveal>
+    ※各素材は「美容素材として配合」しているものであり、本品の届出機能はロダンテノンBによる「肌の潤いの保持」です。
+  </p>
+</section>
+
+<!-- =====================================================
+     SECTION 12 — 差別化（競合名は出さない）
+     ===================================================== -->
+<section class="diff">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 12 — 処方の違い</span>
+    <h2 class="title">同じ「マンゴスチン」でも<br><span class="accent">中身は同じではありません</span></h2>
+    <p class="body">
+      マンゴスチン由来ロダンテノンBを摂れること。それだけでURUCOは終わりません。URUCOは、機能性関与成分と美容素材を、ひとつの処方に。
+    </p>
+    <p class="body">
+      マンゴスチンだけではなく、プラセンタ、エラスチン、コラーゲン、セラミド、L-シスチン。「何を配合しているか」まで考えて選びたい人へ。
+    </p>
+  </div>
+  <div class="diff__pair" data-reveal>
+    <span class="diff__chip">ロダンテノンB</span>
+    <span class="diff__chip">豚プラセンタ</span>
+    <span class="diff__chip">エラスチン</span>
+    <span class="diff__chip">コラーゲンペプチド</span>
+    <span class="diff__chip">セラミド</span>
+    <span class="diff__chip">L-シスチン</span>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 13 — 国内GMP認定工場
+     ===================================================== -->
+<section class="bg-deep">
+  <div class="split" data-reveal>
+    <div class="split__text">
+      <span class="eyebrow">Section 13 — 製造品質</span>
+      <h2 class="title">毎日続けるものだから<br><span class="accent">製造品質にもこだわる</span></h2>
+      <p class="body">
+        URUCOは、国内GMP認定工場で製造。美容サプリメントは、一度だけ飲むものではありません。毎日の習慣として続けるものだからこそ、原料だけでなく、製造・品質管理まで大切にしています。
+      </p>
+    </div>
+    <div class="split__media">
+      <figure class="ph ph--land" role="img" aria-label="クリーンな製造・検査・研究施設">
+        <span class="ph__tag">Manufacturing</span>
+        <span class="ph__name">gmp-factory.jpg ／ 3:2</span>
+        <span class="ph__desc">工場・検査・研究施設のクリーンな写真。GMPロゴを使用する場合は表示ルールを確認。</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 14 — 女性にも男性にも
+     ===================================================== -->
+<section class="bg-paper">
+  <div class="wrap statement" data-reveal>
+    <span class="eyebrow">Section 14 — For everyone</span>
+    <h2>美容は、<br>女性だけのものではない</h2>
+    <p class="body">
+      肌の潤いを大切にしたい。年齢に応じた美容を始めたい。清潔感のある印象を保ちたい。そんな気持ちは、女性にも男性にも共通しています。
+    </p>
+    <p class="body">
+      URUCOは、性別を問わず取り入れやすい大人のインナービューティ習慣。パートナーと一緒に。夫婦で。それぞれの美容習慣として。
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 15 — こんな方に
+     ===================================================== -->
+<section class="bg-deep">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 15 — こんな方に</span>
+    <h2 class="title">URUCOは、こんな方の<br>美容習慣に</h2>
+  </div>
+  <div class="forwho" data-reveal>
+    <ul>
+      <li>肌の潤いを大切にしたい</li>
+      <li>糖化ストレスが気になる</li>
+      <li>年齢に応じた美容を始めたい</li>
+      <li>外側だけでなく内側からも美容を考えたい</li>
+      <li>プラセンタを美容習慣に取り入れたい</li>
+      <li>成分を見てサプリを選びたい</li>
+      <li>原料や製造品質にもこだわりたい</li>
+      <li>男女を問わず続けやすい美容サプリを探している</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA 4 -->
+<div class="cta-band bg-paper">
+  <div class="cta" data-reveal>
+    <p class="cta__label">新しい美容習慣を、今日から。</p>
+    <a class="btn" href="#buy">URUCOをはじめる</a>
+  </div>
+</div>
+
+<!-- =====================================================
+     SECTION 16 — 飲み方
+     ===================================================== -->
+<section class="bg-deep">
+  <div class="wrap howto" data-reveal>
+    <span class="eyebrow is-center" style="justify-content:center">Section 16 — 飲み方</span>
+    <h2 class="title">毎日3粒<br>シンプルだから、続けやすい</h2>
+    <div class="howto__num">3<span>粒 / DAY</span></div>
+    <p class="body" style="max-width:30em;margin-inline:auto">
+      1日の摂取目安量は3粒。水またはぬるま湯などと一緒にお召し上がりください。特別なことを増やすのではなく、毎日の生活の中に美容習慣をひとつ加える。続けることを考えた、シンプルなインナービューティです。
+    </p>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 17 — FAQ
+     ===================================================== -->
+<section class="bg-paper">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 17 — FAQ</span>
+    <h2 class="title">よくあるご質問</h2>
+  </div>
+  <div class="faq" data-reveal>
+    <details>
+      <summary><span class="q">Q</span><span>男性でも飲めますか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">はい。URUCOは健常な成人を対象としており、性別を問わず、肌の潤いや毎日の美容習慣を大切にしたい方にお召し上がりいただけます。</p>
+    </details>
+    <details>
+      <summary><span class="q">Q</span><span>いつ飲めばよいですか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">食品ですので基本的にお好きなタイミングでお召し上がりいただけます。毎日続けやすい時間を決めて、習慣として取り入れることをおすすめします。</p>
+    </details>
+    <details>
+      <summary><span class="q">Q</span><span>1日何粒ですか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">1日3粒を目安に、水またはぬるま湯などと一緒にお召し上がりください。</p>
+    </details>
+    <details>
+      <summary><span class="q">Q</span><span>ロダンテノンBとは何ですか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">マンゴスチンに含まれるURUCOの機能性関与成分です。ロダンテノンBには、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。</p>
+    </details>
+    <details>
+      <summary><span class="q">Q</span><span>プラセンタは何由来ですか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">デンマーク産豚由来のプラセンタエキス末を使用しています。1日の摂取目安量3粒当たり270mg配合しています。</p>
+    </details>
+    <details>
+      <summary><span class="q">Q</span><span>妊娠中、授乳中でも飲めますか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">本品は妊産婦および授乳婦を対象として開発された食品ではありません。妊娠中、授乳中の方はご利用をお控えください。</p>
+    </details>
+    <details>
+      <summary><span class="q">Q</span><span>薬を飲んでいますが併用できますか？</span><span class="mk" aria-hidden="true"></span></summary>
+      <p class="faq__a">医薬品を服用している場合は、医師または薬剤師にご相談ください。</p>
+    </details>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 18 — 最終クロージング
+     ===================================================== -->
+<section class="closing" id="buy">
+  <div class="wrap" data-reveal>
+    <span class="eyebrow">Section 18 — Closing</span>
+    <h2 class="title">年齢を重ねるほど、<br>美容は<span class="accent">「何を選ぶか」</span>へ</h2>
+    <p class="body">
+      ただ流行っているから。有名な美容成分だから。それだけではなく、何のための成分なのか。どれくらい入っているのか。どんな背景を持つ原料なのか。毎日口にするものだからこそ、そこまで知って選んでほしい。
+    </p>
+  </div>
+
+  <div class="closing__stack" data-reveal>
+    ロダンテノンB<span class="op">×</span>デンマーク産豚プラセンタ<span class="op">＋</span>4つの美容素材
+  </div>
+
+  <div class="closing__sign" data-reveal>
+    糖化ストレスに<br>うるおいという答え<br>
+    <span style="font-size:.68em;color:var(--ink-soft)">美容を、感覚ではなく設計で</span>
+    <div class="closing__brand">URUCO<small>機能性表示食品</small></div>
+  </div>
+
+  <!-- IMAGE PROMPT (closing):
+       高級美容サプリメントURUCOのブランド広告。商品パッケージを中央に美しく配置し、その周囲にマンゴスチン、水滴、柔らかな光の反射を配置。
+       余計な小物は置かない。アイボリーホワイトとダスティローズを基調に、シャンパンゴールドを少量。静かで自信のあるラグジュアリー感。
+       「これからの大人の美容習慣」を象徴する洗練された日本の広告表現。CTAやキャッチコピーを後から配置できる十分な余白。文字なし。 -->
+  <div class="wrap" style="margin-top:clamp(2.6rem,9vw,4rem)" data-reveal>
+    <figure class="ph ph--wide" role="img" aria-label="URUCOのブランドビジュアル">
+      <span class="ph__tag">Brand</span>
+      <span class="ph__name">closing.jpg ／ 16:10</span>
+      <span class="ph__desc">パッケージを中央に、マンゴスチン・水滴・柔らかな光。余計な小物は置かない。文字なし。</span>
+    </figure>
+  </div>
+
+  <!-- CTA 5 -->
+  <div class="cta" style="margin-top:clamp(2.6rem,9vw,4rem)" data-reveal>
+    <p class="cta__label">URUCOで、<br>新しい美容習慣をはじめる</p>
+    <a class="btn" href="#" aria-label="商品を購入する">商品を購入する</a>
+  </div>
+</section>
+
+<!-- =====================================================
+     SECTION 19 — 法定・注意表示
+     ===================================================== -->
+<section class="legal">
+  <div class="wrap">
+    <h2>機能性表示 ／ 注意表示</h2>
+
+    <p class="k747">届出番号 K747</p>
+    <p>本品はロダンテノンBを含みます。ロダンテノンBは、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。</p>
+
+    <div class="block">
+      <p>本品は、疾病の診断、治療、予防を目的としたものではありません。</p>
+      <p>本品は、特定保健用食品と異なり、機能性及び安全性について国による評価を受けたものではありません。届け出られた科学的根拠等の情報は消費者庁のウェブサイトで確認できます。</p>
+      <p>食生活は、主食、主菜、副菜を基本に、食事のバランスを。</p>
+    </div>
+
+    <div class="block">
+      <p style="color:var(--ink);font-weight:500">摂取上の注意</p>
+      <ul>
+        <li>一日摂取目安量を守ってください。</li>
+        <li>妊娠・授乳中の方、乳幼児、小児のご利用はお控えください。</li>
+        <li>原材料名をご確認の上、食物アレルギーのある方はお召し上がりにならないでください。</li>
+        <li>疾病に罹患している場合は医師に、医薬品を服用している場合は医師または薬剤師に相談してください。</li>
+        <li>体調に異変を感じた際は、速やかに摂取を中止し、医師に相談してください。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__logo">URUCO</div>
+  <small>機能性表示食品 ／ 届出番号 K747</small>
+</footer>
+
+<!-- sticky CTA (SP) -->
+<div class="stickycta" id="stickycta">
+  <span class="stickycta__txt">糖化ストレスに、<br>うるおいという答え</span>
+  <a class="btn" href="#buy">詳しく見る</a>
+</div>
+
+<script>
+/* reveal on scroll */
+(function(){
+  var els = document.querySelectorAll('[data-reveal]');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:.16,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+/* sticky CTA after first view */
+(function(){
+  var bar = document.getElementById('stickycta');
+  var fv = document.getElementById('top');
+  if(!bar || !fv) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      bar.classList.toggle('show', !en.isIntersecting);
+    });
+  },{threshold:0});
+  io.observe(fv);
+})();
+</script>
+
+</body>
+</html>
