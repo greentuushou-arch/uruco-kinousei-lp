@@ -7,37 +7,39 @@
        - インラインフレーム／固定配置（fixed・sticky）なし
        - 外部画像URLなし（画像はすべて R-Cabinet にアップして、
          各 img の src にある【店舗ID】を自店IDに置き換えてください）
+       - カゴへ誘導するボタンは置いていません（楽天の商品ページ側に任せる）
+       - レビューは「レビューページへのリンク」のみ（本文の転載はしない）
      レイアウトは style タグが無効化されても崩れないよう、
      幅・画像・表は各要素の style 属性にも直接指定しています。
+     文字サイズは大きめ（本文21px／見出し32px）に設定。
      ============================================================ -->
 
-<div id="uruco-item" style="max-width:640px;margin:0 auto;background:#FFF6FA;color:#360C29;font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',YuGothic,'Noto Sans JP',sans-serif;line-height:1.9;font-size:15px;-webkit-text-size-adjust:100%;">
+<div id="uruco-item" style="max-width:640px;margin:0 auto;background:#FFF6FA;color:#360C29;font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Yu Gothic',YuGothic,'Noto Sans JP',sans-serif;line-height:1.85;font-size:21px;-webkit-text-size-adjust:100%;">
 
 <style>
 #uruco-item *{box-sizing:border-box}
 #uruco-item img{width:100%;height:auto;display:block;border:0;margin:0}
-#uruco-item .h{font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,'Noto Serif JP',serif;font-weight:600;letter-spacing:.02em;line-height:1.5}
-#uruco-item .wrap{padding:26px 20px}
-#uruco-item .eyebrow{font-size:11px;letter-spacing:.22em;color:#9A3670;margin:0 0 12px}
-#uruco-item h2.t{font-size:22px;margin:0 0 14px}
-#uruco-item p{margin:0 0 14px}
-#uruco-item .lead{font-size:16px;color:#360C29}
-#uruco-item .note{font-size:12px;line-height:1.8;color:#8A6A80;margin-top:10px}
-#uruco-item .band{background:#360C29;color:#F7DCEA;text-align:center;font-size:13px;letter-spacing:.04em;padding:14px 16px}
-#uruco-item .box{background:#fff;border:1px solid #E6C9D9;padding:16px 16px}
-#uruco-item .func{background:#fff;border-left:3px solid #9A3670;padding:14px 16px;font-size:13px;line-height:1.85}
+#uruco-item .h{font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,'Noto Serif JP',serif;font-weight:600;letter-spacing:.02em;line-height:1.45}
+#uruco-item .wrap{padding:34px 22px}
+#uruco-item .eyebrow{font-size:15px;letter-spacing:.2em;color:#9A3670;margin:0 0 16px}
+#uruco-item h2.t{font-size:32px;line-height:1.4;margin:0 0 20px}
+#uruco-item p{margin:0 0 18px}
+#uruco-item .lead{font-size:22px;color:#360C29}
+#uruco-item .note{font-size:16px;line-height:1.8;color:#8A6A80;margin-top:14px}
+#uruco-item .func{background:#fff;border-left:4px solid #9A3670;padding:20px 20px;font-size:19px;line-height:1.8}
 #uruco-item ul.chk{list-style:none;margin:0;padding:0}
-#uruco-item ul.chk li{border-bottom:1px solid #E6C9D9;padding:12px 0 12px 18px;position:relative;font-size:15px}
-#uruco-item ul.chk li:before{content:"";position:absolute;left:0;top:20px;width:9px;height:1px;background:#BC4485}
-#uruco-item table.spec{width:100%;border-collapse:collapse;margin:4px 0 0}
-#uruco-item table.spec th,#uruco-item table.spec td{border-bottom:1px solid #E6C9D9;padding:11px 4px;text-align:left;font-size:14px;vertical-align:top}
-#uruco-item table.spec th{font-weight:normal;width:44%;color:#5b4a56}
-#uruco-item table.spec td{text-align:right;font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,serif;font-size:17px}
-#uruco-item .qa{border-top:1px solid #E6C9D9;padding:14px 0}
-#uruco-item .qa .q{font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,serif;font-size:15px;margin:0 0 6px}
-#uruco-item .qa .a{font-size:14px;color:#5b4a56;margin:0}
-#uruco-item .legal{background:#F4D5E5;font-size:12px;line-height:1.85;color:#5b4a56}
-#uruco-item .legal h3{font-size:12px;letter-spacing:.16em;color:#7C2857;margin:0 0 12px}
+#uruco-item ul.chk li{border-bottom:1px solid #E6C9D9;padding:18px 0 18px 24px;position:relative;font-size:21px}
+#uruco-item ul.chk li:before{content:"";position:absolute;left:0;top:33px;width:13px;height:2px;background:#BC4485}
+#uruco-item table.spec{width:100%;border-collapse:collapse;margin:6px 0 0}
+#uruco-item table.spec th,#uruco-item table.spec td{border-bottom:1px solid #E6C9D9;padding:16px 4px;text-align:left;font-size:19px;vertical-align:top}
+#uruco-item table.spec th{font-weight:normal;width:42%;color:#5b4a56}
+#uruco-item table.spec td{text-align:right;font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,serif;font-size:26px}
+#uruco-item .qa{border-top:1px solid #E6C9D9;padding:20px 0}
+#uruco-item .qa .q{font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,serif;font-size:21px;margin:0 0 8px}
+#uruco-item .qa .a{font-size:19px;color:#5b4a56;margin:0}
+#uruco-item a.review{display:block;text-align:center;text-decoration:none;font-family:'Hiragino Mincho ProN','Yu Mincho',YuMincho,serif;font-size:20px;letter-spacing:.02em;line-height:1.5;color:#BC4485;background:#fff;border:2px solid #BC4485;padding:22px 14px}
+#uruco-item .legal{background:#F4D5E5;font-size:16px;line-height:1.85;color:#5b4a56}
+#uruco-item .legal h3{font-size:16px;letter-spacing:.14em;color:#7C2857;margin:0 0 14px}
 </style>
 
 <!-- 1. メインビジュアル（画像／640×800目安）
@@ -47,19 +49,17 @@
 <!-- 2. 届出表示（必ずテキストで） -->
 <div class="wrap">
   <p class="eyebrow">機能性表示食品　届出番号 K747</p>
-  <p class="h" style="font-size:20px;margin:0 0 14px">糖化ストレスに、<br>うるおいという答え。</p>
+  <p class="h" style="font-size:30px;line-height:1.5;margin:0 0 18px">糖化ストレスに、<br>うるおいという答え。</p>
   <div class="func">
     本品はロダンテノンBを含みます。ロダンテノンBは、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。
   </div>
   <p class="note">※本品は、疾病の診断・治療・予防を目的としたものではありません。食生活は、主食、主菜、副菜を基本に、食事のバランスを。</p>
 </div>
 
-<div class="band">▲ ページ上部の【買い物かごに入れる】からご購入いただけます</div>
-
 <!-- 3. 3秒で伝わる要点（画像／640×640目安）
      焼き込み：POINT01 糖化ストレスを軽減／POINT02 肌の潤いを保持／POINT03 デンマーク産豚プラセンタ270mg配合 -->
 <img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/points.jpg" alt="URUCOの3つのポイント 糖化ストレスを軽減 肌の潤いを保持 デンマーク産豚プラセンタ270mg配合">
-<div class="wrap" style="padding-top:16px">
+<div class="wrap" style="padding-top:18px">
   <p class="note" style="margin-top:0">
     ※POINT 01・02は、機能性関与成分ロダンテノンB（1日3粒あたり160μg）による報告されている機能です。POINT 03は配合の事実であり、豚プラセンタ自体の機能を示すものではありません。
   </p>
@@ -79,12 +79,10 @@
   </ul>
 </div>
 
-<div class="band">▲ ページ上部の【買い物かごに入れる】からご購入いただけます</div>
-
 <!-- 5. ロダンテノンB 160μg（画像／640×500目安）
      焼き込み：160μg ／ Rhodanthenone B ／ 1日3粒あたり・機能性関与成分 -->
 <img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/rhodanthenone.jpg" alt="機能性関与成分ロダンテノンBを1日3粒あたり160マイクログラム配合">
-<div class="wrap" style="padding-top:16px">
+<div class="wrap" style="padding-top:18px">
   <p class="eyebrow">機能性関与成分</p>
   <h2 class="t h">糖化ストレスを軽減し、<br>肌の潤いを保持。</h2>
   <p>URUCOには、マンゴスチン由来の機能性関与成分「ロダンテノンB」を配合しています。ロダンテノンBには、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。</p>
@@ -93,7 +91,7 @@
 <!-- 6. 糖化ストレスとは（図解画像／640×620目安）
      焼き込み：糖 ＋ たんぱく質 → 糖化 → AGEs（最終糖化産物）／URUCOは「糖化ストレス」に着目 → 肌の潤いを保持する機能へ -->
 <img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/glycation.jpg" alt="糖とたんぱく質が反応する糖化の説明図。URUCOは糖化ストレスに着目">
-<div class="wrap" style="padding-top:16px">
+<div class="wrap" style="padding-top:18px">
   <h2 class="t h">美容でいま注目したい<br>「糖化ストレス」。</h2>
   <p>体内では、糖とたんぱく質が反応する「糖化」が起こり、その過程でつくられるもののひとつがAGEs（最終糖化産物）です。URUCOが着目したのは、糖化ストレスと肌の潤いの関係。だからこそ、糖化ストレスに着目した機能性関与成分を設計の中心にしました。</p>
   <p class="note">
@@ -104,17 +102,15 @@
 <!-- 7. 1＋5 BEAUTY FORMULA（画像／640×560目安）
      焼き込み：1 ＋ 5 BEAUTY FORMULA ／ 1つの機能性関与成分＝ロダンテノンB ／ 5つの美容素材＝デンマーク産豚プラセンタ・エラスチン・コラーゲンペプチド・セラミド・L-シスチン -->
 <img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/formula.jpg" alt="1つの機能性関与成分と5つの美容素材、6素材のビューティフォーミュラ">
-<div class="wrap" style="padding-top:16px;background:#fff">
+<div class="wrap" style="padding-top:18px;background:#fff">
   <h2 class="t h">機能性だけで、<br>終わらせません。</h2>
   <p>肌の潤いを考える機能性表示食品なら、ロダンテノンBだけでも商品はつくれます。それでもURUCOは、そこで終わりませんでした。1つの機能性関与成分に、5つの美容素材を組み合わせた6素材で構成しています。</p>
 </div>
 
-<div class="band">▲ ページ上部の【買い物かごに入れる】からご購入いただけます</div>
-
 <!-- 8. プラセンタ 270mg/DAY（画像／640×520目安）
      焼き込み：270mg / DAY ／ デンマーク産 豚プラセンタエキス末 ／ 1日3粒あたり -->
 <img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/placenta.jpg" alt="デンマーク産豚プラセンタエキス末を1日3粒あたり270ミリグラム配合">
-<div class="wrap" style="padding-top:16px">
+<div class="wrap" style="padding-top:18px">
   <h2 class="t h">もうひとつの主役、<br>デンマーク産豚プラセンタ。</h2>
   <p>マンゴスチンと並んで大切にした素材が、デンマーク産豚プラセンタ。1日摂取目安量3粒あたり、豚プラセンタエキス末を270mg配合しています。「配合しています」だけでなく、どれだけ入っているのかまで、きちんとお伝えします。</p>
 </div>
@@ -123,7 +119,7 @@
 <div class="wrap" style="background:#360C29;color:#F7DCEA">
   <p class="eyebrow" style="color:#ECB8D7">配合の見える化</p>
   <h2 class="t h" style="color:#fff">美しさを語る前に、<br>中身を見てください。</h2>
-  <table class="spec" style="margin-top:8px">
+  <table class="spec" style="margin-top:10px">
     <tr><th style="color:#E7B9D2">豚プラセンタエキス末</th><td style="color:#fff">270mg</td></tr>
     <tr><th style="color:#E7B9D2">マンゴスチンエキス末</th><td style="color:#fff">222mg</td></tr>
     <tr><th style="color:#E7B9D2">エラスチン</th><td style="color:#fff">27mg</td></tr>
@@ -131,8 +127,9 @@
     <tr><th style="color:#E7B9D2">コラーゲンペプチド</th><td style="color:#fff">9mg</td></tr>
     <tr><th style="color:#E7B9D2;border-bottom:0">セラミド原料</th><td style="color:#fff;border-bottom:0">1.35mg</td></tr>
   </table>
-  <p style="text-align:center;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;font-size:20px;color:#fff;margin:20px 0 6px">
-    プラセンタ ＋ マンゴスチン　1日 492mg
+  <p style="text-align:center;font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:#fff;margin:26px 0 8px;line-height:1.4">
+    <span style="font-size:20px">プラセンタ ＋ マンゴスチン</span><br>
+    <span style="font-size:32px">1日 492mg</span>
   </p>
   <p class="note" style="color:#C9A9BE">
     ※配合表の1粒当たり数値を、1日摂取目安量3粒換算で表記しています。数値は原料・エキス末としての配合量です。機能性関与成分はロダンテノンB（3粒あたり160μg）であり、その他の成分の機能性を示すものではありません。
@@ -143,8 +140,8 @@
 <div class="wrap" style="background:#fff">
   <p class="eyebrow">6素材の内訳</p>
   <table class="spec">
-    <tr><th>機能性関与成分</th><td style="font-size:15px">ロダンテノンB</td></tr>
-    <tr><th>美容素材</th><td style="font-size:15px;text-align:right">デンマーク産豚プラセンタ／エラスチン／コラーゲンペプチド／セラミド／L-シスチン</td></tr>
+    <tr><th>機能性関与成分</th><td style="font-size:20px">ロダンテノンB</td></tr>
+    <tr><th>美容素材</th><td style="font-size:19px;text-align:right;line-height:1.7">デンマーク産豚プラセンタ／エラスチン／コラーゲンペプチド／セラミド／L-シスチン</td></tr>
   </table>
   <p class="note">※エラスチン・コラーゲンペプチド・セラミド・L-シスチンは美容素材として配合しているもので、これらの成分自体の効果を示すものではありません。本品の機能性は、機能性関与成分ロダンテノンBによる「糖化ストレスの軽減を通じた肌の潤いの保持」です。</p>
 </div>
@@ -156,11 +153,9 @@
   <p>毎日続けるものだからこそ、原料だけでなく製造・品質管理まで大切にしています。デンマーク産豚プラセンタは、豚満期胎盤を酵素で分解・抽出し、不純物を取り除いて濃縮する工程を経ています。</p>
 </div>
 
-<div class="band">▲ ページ上部の【買い物かごに入れる】からご購入いただけます</div>
-
 <!-- 12. 飲み方（画像／640×360目安 焼き込み：1日3粒／水またはぬるま湯で） -->
 <img src="https://image.rakuten.co.jp/【店舗ID】/cabinet/uruco/howto.jpg" alt="1日3粒を水またはぬるま湯でお召し上がりください">
-<div class="wrap" style="padding-top:16px">
+<div class="wrap" style="padding-top:18px">
   <h2 class="t h">毎日3粒。<br>シンプルだから、続けやすい。</h2>
   <p>1日の摂取目安量は3粒。水またはぬるま湯などと一緒にお召し上がりください。</p>
 </div>
@@ -177,13 +172,19 @@
   <div class="qa"><p class="q">Q. 薬を飲んでいますが併用できますか？</p><p class="a">医薬品を服用している場合は、医師または薬剤師にご相談ください。</p></div>
 </div>
 
-<!-- 14. レビュー誘導（楽天内・テキストのみ） -->
-<div class="band" style="background:#BC4485;color:#fff">▼ ご購入者さまのレビューはページ下部からご覧いただけます</div>
+<!-- 14. レビュー（サプリは本文の転載不可 → レビューページへのリンクのみ）
+     href は自店の「レビューを見る」URL に差し替え。
+     例：https://review.rakuten.co.jp/item/1/【店舗ID】_【商品管理番号】/ -->
+<div class="wrap">
+  <p class="eyebrow">お客様の声</p>
+  <a class="review" href="https://review.rakuten.co.jp/item/1/【店舗ID】_【商品管理番号】/">ご購入者さまのレビューはこちら →</a>
+  <p class="note">※レビューの内容はレビューページでご確認ください。</p>
+</div>
 
 <!-- 15. 法定・注意表示（必ずテキストで・全文） -->
 <div class="wrap legal">
   <h3>機能性表示 ／ 注意表示</h3>
-  <p style="font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:#360C29">届出番号 K747</p>
+  <p style="font-family:'Hiragino Mincho ProN','Yu Mincho',serif;color:#360C29;font-size:19px">届出番号 K747</p>
   <p>本品はロダンテノンBを含みます。ロダンテノンBは、糖化ストレスを軽減することにより肌の潤いを保持する機能があることが報告されています。</p>
   <p>本品は、疾病の診断、治療、予防を目的としたものではありません。</p>
   <p>本品は、特定保健用食品と異なり、機能性及び安全性について国による評価を受けたものではありません。届け出られた科学的根拠等の情報は消費者庁のウェブサイトで確認できます。</p>
@@ -202,21 +203,19 @@
 <div class="wrap" style="background:#fff">
   <p class="eyebrow">商品情報</p>
   <table class="spec">
-    <tr><th>名称</th><td style="font-size:14px">（記入）</td></tr>
-    <tr><th>区分</th><td style="font-size:14px">機能性表示食品</td></tr>
-    <tr><th>届出番号</th><td style="font-size:14px">K747</td></tr>
-    <tr><th>機能性関与成分</th><td style="font-size:14px">ロダンテノンB（1日3粒あたり160μg）</td></tr>
-    <tr><th>内容量</th><td style="font-size:14px">（記入）／1粒重量300mg</td></tr>
-    <tr><th>1日摂取目安量</th><td style="font-size:14px">3粒</td></tr>
-    <tr><th>原材料名</th><td style="font-size:14px">（記入・アレルゲン含む）</td></tr>
-    <tr><th>栄養成分表示</th><td style="font-size:14px">（3粒あたり／記入）</td></tr>
-    <tr><th>保存方法</th><td style="font-size:14px">（記入）</td></tr>
-    <tr><th>製造国</th><td style="font-size:14px">日本</td></tr>
-    <tr><th>販売者</th><td style="font-size:14px">（記入）</td></tr>
+    <tr><th>名称</th><td style="font-size:18px">（記入）</td></tr>
+    <tr><th>区分</th><td style="font-size:18px">機能性表示食品</td></tr>
+    <tr><th>届出番号</th><td style="font-size:18px">K747</td></tr>
+    <tr><th>機能性関与成分</th><td style="font-size:18px">ロダンテノンB（1日3粒あたり160μg）</td></tr>
+    <tr><th>内容量</th><td style="font-size:18px">（記入）／1粒重量300mg</td></tr>
+    <tr><th>1日摂取目安量</th><td style="font-size:18px">3粒</td></tr>
+    <tr><th>原材料名</th><td style="font-size:18px">（記入・アレルゲン含む）</td></tr>
+    <tr><th>栄養成分表示</th><td style="font-size:18px">（3粒あたり／記入）</td></tr>
+    <tr><th>保存方法</th><td style="font-size:18px">（記入）</td></tr>
+    <tr><th>製造国</th><td style="font-size:18px">日本</td></tr>
+    <tr><th>販売者</th><td style="font-size:18px">（記入）</td></tr>
   </table>
 </div>
-
-<div class="band">▲ ページ上部の【買い物かごに入れる】からご購入いただけます</div>
 
 </div>
 <!-- ============================================================ -->
