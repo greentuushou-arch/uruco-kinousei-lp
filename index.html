@@ -196,6 +196,7 @@ h2.title .plum{color:var(--plum-soft)}
 }
 /* FV image */
 .fv__visual{position:relative}
+.fv__photo{width:100%;height:auto;display:block;border-radius:6px;box-shadow:var(--shadow)}
 .ph{
   position:relative;
   display:flex;flex-direction:column;justify-content:flex-end;
@@ -742,16 +743,9 @@ h2.title .plum{color:var(--plum-soft)}
       </p>
     </div>
     <div class="fv__visual">
-      <!-- IMAGE PROMPT (fv-hero):
-           日本の高級美容ブランドの広告写真。大人向けインナービューティサプリメント「URUCO」のパッケージを主役として中央からやや右に配置。
-           横に成熟したマンゴスチンの果実と美しい断面。透明感のある水滴と柔らかな自然光。
-           背景はアイボリーホワイトからダスティローズへの繊細なグラデーション。シャンパンゴールドのごく控えめなアクセント。
-           高級化粧品ブランドのような洗練された静かな美しさ。科学的な信頼感と自然由来素材の上質さを両立。文字なし。フォトリアル、高品質。 -->
-      <figure class="ph ph--hero" role="img" aria-label="URUCOのパッケージとマンゴスチン、水滴、柔らかな光">
-        <span class="ph__tag">Main Visual</span>
-        <span class="ph__name">fv-hero.jpg ／ SP 4:5・PC 3:4</span>
-        <span class="ph__desc">パッケージを主役に、マンゴスチンの果実と断面・水滴・柔らかな光。背景はアイボリー→ダスティローズ。文字なし。</span>
-      </figure>
+      <img class="fv__photo" src="images/fv-hero.jpg" width="900" height="1027"
+           alt="URUCOのパッケージと、マンゴスチンの果実・断面、水のグラス">
+
     </div>
   </div>
 
